@@ -34,7 +34,15 @@
 
 }
 
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
 * {
     font-family: var(--body-font);
     font-size: var(--body-size);
+    margin: 0;
+    padding: 0; 
 }

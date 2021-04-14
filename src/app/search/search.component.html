@@ -1,15 +1,31 @@
-<div class="input-group mb-3">
-    <input id="autocomplete" type="text" class="form-control" placeholder="Enter Team Name" aria-label="Team Name" 
-    aria-describedby="button-addon2" [(ngModel)]="teamName" [ngbTypeahead]="search">
+<section class="search">
+<div class="container">
+  <div class="input-group mb-3">
+    <input id="autocomplete" type="text" class="form-control" placeholder="Search Team Name" aria-label="Team Name" 
+      aria-describedby="button-addon2" [(ngModel)]="teamName" [ngbTypeahead]="search">
     <button class="btn btn-outline-secondary" type="button" id="button-addon2"
-    (click)="getStats()" ><i class="bi bi-search"></i></button>
+      (click)="getStats()">
+      <i class="bi bi-search"></i>
+    </button>
+  </div>
 </div>
-<nav>
-    <a href="#stats" active="active">Stats</a>
-    <a href="#upcoming" active="active">Upcoming</a>
-    <a href="#leaderboard" active="active">Leaderboard</a>
-  </nav>
+</section>
 
+<section class="display">
+<div class="container">
+  <ul class="nav justify-content-center">
+    <li class="nav-item">
+      <a class="nav-link active" href="#stats">Stats</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#upcoming">Upcoming Matches</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#leaderboard">Leaderboard</a>
+    </li>
+  </ul>
+  </div>
+</section>
 <app-statistics id="stats" [queryTeamName]=teamName></app-statistics>
 <app-leaderboard id="leaderboard" [teamResults]=teamResults></app-leaderboard>
 <app-upcoming id="upcoming" [queryTeamName]=teamName></app-upcoming>

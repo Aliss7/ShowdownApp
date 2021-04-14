@@ -1,19 +1,21 @@
-<table class="table" id='tab'>
-    <thead>
-    <tr>
-        <th scope="col">Percentage</th>
-        <th scope="col">ID</th>
-        <th scope="col">Points</th>
-        <th scope="col">Losses</th>
-        
-    </tr>
-    </thead>
-    <tbody>
-    <tr *ngFor="let e of teamResults;">
-        <td>{{ e.percentage }}</td>
-        <td>{{ e.id }}</td>
-        <td>{{ e.pts }}</td>
-        <td>{{ e.losses }}</td>
-    </tr>
-    </tbody>
-</table>
+<div class="table-responsive-md">
+    <table class="table" id='tab'>
+        <thead>
+        <tr>
+            <th scope="col">Percentage</th>
+            <th scope="col">ID</th>
+            <th scope="col">Points</th>
+            <th scope="col">Losses</th>
+            
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let e of teamResults;">
+            <td>{{ e.percentage }}</td>
+            <td>{{ e.id }}</td>
+            <td>{{ e.pts }}</td>
+            <td>{{ e.losses }}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>

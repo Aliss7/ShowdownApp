@@ -1,0 +1,23 @@
+.hero {
+    background:linear-gradient(0deg, rgb(0, 0, 0), rgba(0, 0, 0, 0.205)),url(../../assets/images/header-bg.jpg);
+    color: white;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.hero nav span{
+    color: white;
+    font-size: 50px;
+
+}
+
+@media only screen and (max-width: 700px) and (min-width: 200px)  {
+    .hero nav{
+        justify-content: center;
+        align-items: center;
+    }
+
+}
+

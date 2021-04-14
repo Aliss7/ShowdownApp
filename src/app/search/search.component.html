@@ -1,19 +1,19 @@
 <section class="search">
-<div class="container">
-  <div class="input-group mb-3">
-    <input id="autocomplete" type="text" class="form-control" placeholder="Search Team Name" aria-label="Team Name" 
-      aria-describedby="button-addon2" [(ngModel)]="teamName" [ngbTypeahead]="search">
-    <button class="btn btn-outline-secondary" type="button" id="button-addon2"
-      (click)="getStats()">
-      <i class="bi bi-search"></i>
-    </button>
+  <div class="container">
+    <div class="input-group col-xl-8 col-lg-8 col-md-8 col-sm-10 col-xsl-12">
+      <input id="autocomplete" type="text" class="form-control" placeholder="Search Team Name" aria-label="Team Name" 
+        aria-describedby="btn-query" [(ngModel)]="teamName" [ngbTypeahead]="search">
+      <button class="btn" type="button" id="btn-query"
+        (click)="getStats()">
+        <a href="#leaderboard"><i class="bi bi-search"></i></a>
+      </button>
+    </div>
   </div>
-</div>
 </section>
 
 <section class="display">
 <div class="container">
-  <ul class="nav justify-content-center">
+  <ul class="nav justify-content-center sticky-top">
     <li class="nav-item">
       <a class="nav-link active" href="#stats">Stats</a>
     </li>

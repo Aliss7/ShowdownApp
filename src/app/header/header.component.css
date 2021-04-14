@@ -5,11 +5,13 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    padding: 0;
 }
 
 .hero nav span{
     color: white;
     font-size: 50px;
+    margin: 0%;
 
 }
 

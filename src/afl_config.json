@@ -116,6 +116,26 @@
           "Port Adelaide"
         ]
       
-    }
+    },
+  "team_logos":{
+    "Western Bulldogs" : ".\\assets\\images\\logos\\Western_Bulldogs.png", 
+    "West Coast": ".\\assets\\images\\logos\\West_Coast_Eagles.png",
+    "Sydney": ".\\assets\\images\\logos\\Sydney_Swans.png",
+    "St Kilda": ".\\assets\\images\\logos\\St_Kilda_Saints.png",
+    "Richmond": ".\\assets\\images\\logos\\Richmond_Tigers.png",
+    "Port Adelaide": ".\\assets\\images\\logos\\Port_Adelaide_Power.png",
+    "North Melbourne": ".\\assets\\images\\logos\\North_Melbourne_Kangaroos.png",
+    "Melbourne": ".\\assets\\images\\logos\\Melbourne_Demons.png",
+    "Hawthorn": ".\\assets\\images\\logos\\Hawthorn_Hawks.png",
+    "Greater Western Sydney": ".\\assets\\images\\logos\\Greater_Western_Sydney_Giants.png",
+    "Gold Coast": ".\\assets\\images\\logos\\Gold_Coast_Suns.png",
+    "Geelong": ".\\assets\\images\\logos\\Geelong_Cats.png",
+    "Fremantle": ".\\assets\\images\\logos\\Fremantle_Dockers.png",
+    "Essendon": ".\\assets\\images\\logos\\Essendon_Bombers.png",
+    "Collingwood": ".\\assets\\images\\logos\\Collingwood_Magpies.png",
+    "Carlton": ".\\assets\\images\\logos\\Carlton_Blues.png",
+    "Brisbane Lions": ".\\assets\\images\\logos\\Brisbane_Lions.png",
+    "Adelaide" : ".\\assets\\images\\logos\\Adelaide_Crows.png"
+}
       
 }

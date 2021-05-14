@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable, OperatorFunction } from 'rxjs';
-import { debounceTime, distinctUntilChanged, map } from 'rxjs/operators';
+
 import { HttpService } from '../http.service';
 import  *  as  data  from  '../../afl_config.json';
 
@@ -11,6 +10,8 @@ const teamIDs : { [key: string]: number }  = data.team_ids;
 const rivalries: { [key: string] : any } = data.rivals;
 
 const leaderboardCount : number = data.leaderboard;
+
+const teamLogos : { [key: string]: string }  = data.team_logos;
 
 let teamID : number = 0;
 
@@ -33,29 +34,33 @@ export class SearchComponent implements OnInit {
   winingVenues: any;
   nextFour: any;
   teamList: any = teamNames;
-  teamStats : { [key: string]: number|string|null } = {
-    draws:null,
-    goals_for:null,
-    for:null,
-    behinds_against:null,
-    name:null,
-    wins:null,
-    played:null,
-    pts:null,
-    against:null,
-    losses:null,
-    behinds_for:null,
-    percentage: null,
-    goals_against:null,
-    id:null,
-    rank:null
+  teamStats : { [key: string]: number|string } = {
+    draws:"",
+    goals_for:"",
+    for:"",
+    behinds_against:"",
+    name:"",
+    wins:"",
+    played:"",
+    pts:"",
+    against:"",
+    losses:"",
+    behinds_for:"",
+    percentage: "",
+    goals_against:"",
+    id:"",
+    rank:""
   };
+  teamids: any = teamIDs;
+  logos: any = teamLogos;
+  tid : any;
+  teamName : any;
 
   ngOnInit(): void {
   }
-
-  teamName = "";
   
+  
+
 
   filterGames(game:any, index:any, array:any){
     if(game.ateamid == teamID || game.hteamid == teamID && game.round<20){
@@ -86,7 +91,7 @@ export class SearchComponent implements OnInit {
   }
 
   getStats() {
-    teamID = teamIDs[this.teamName];
+    teamID = this.tid
     console.log(teamID);
 
     this.http.fetchLeaderboard().subscribe((data: any) => {
@@ -112,7 +117,7 @@ export class SearchComponent implements OnInit {
 
     this.http.fetchNextGame().subscribe((data:any)=> {
       var gameDetails = data["games"];
-      teamID = teamIDs[this.teamName];
+
       this.nextGame = gameDetails.filter(this.getNextGame)[0];
       console.log("next game",this.nextGame);
       this.nextGameID = this.nextGame.id;

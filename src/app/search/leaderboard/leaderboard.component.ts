@@ -12,4 +12,5 @@ export class LeaderboardComponent implements OnInit {
   ngOnInit(): void {
   }
   @Input() topTeams : any;
+  @Input() logos : any;
 }

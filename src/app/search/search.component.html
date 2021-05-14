@@ -1,8 +1,9 @@
 <section class="search">
   <div class="container">
     <div class="input-group col-xl-8 col-lg-8 col-md-8 col-sm-10 col-xsl-12">
-        <select (change)="getStats()" [(ngModel)]="tid">
-          <option [ngValue]="undefined" hidden>Select your Club</option>
+        <select (change)="getStats(0)" [(ngModel)]="tid">
+          <option [ngValue]="undefined" hidden>Adelaide Crows</option>
+          <option value="0" disabled>Select your Club</option>
           <option *ngFor="let team of teamList" value={{teamids[team]}}>
           {{team}}
         </option>
@@ -13,5 +14,14 @@
 
 <app-statistics id="stats" [teamStats]=teamStats [logos]=logos></app-statistics>
 <app-leaderboard id="leaderboard" [topTeams]=topTeamResults [logos]=logos></app-leaderboard>
-<app-upcoming id="upcoming"></app-upcoming>
+<app-upcoming id="upcoming" [nextGame]=nextGame [logos]=logos [prediction]=teamPrediction></app-upcoming>
+<app-pastmatches id="pastmatches" [matches]=gamesPlayed></app-pastmatches>
+<app-nextfour id="nextfour" [nextFour]=nextFour></app-nextfour>
+<app-venues id="venues" [winningVenues]=winningVenues></app-venues>
+<app-rivalstat id="rivalstat" [rivalStats]=rivalStats [rivalMatches]=rivalMatches [logos]=logos></app-rivalstat>
+<app-players id="players" [players]=players></app-players>
+
+
+
+
 

@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="col-sm-12">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <img class="club-logo" src={{logos[nextGame.query]}} 
+                        onerror="this.src='./../assets/images/logos/default.png'">
+                        <h5 class="card-title">
+                            {{ nextGame.query }}
+                        </h5>
+                        <p class="card-text">
+                            {{ prediction.confidence }}
+                        </p>
+                    </div>
+                    <div class="col-sm-6">
+                        <img class="club-logo" src={{logos[nextGame.query_opponent]}} 
+                        onerror="this.src='./../assets/images/logos/default.png'">
+                        <h5 class="card-title">
+                            {{ nextGame.query_opponent }}
+                        </h5>
+                        <p class="card-text">
+                            {{ prediction.opponent_confidence }}
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <h5 class="card-title col-sm-4">
+                        {{ nextGame.venue }}
+                    </h5>
+                    <h5 class="card-title col-sm-4">
+                        {{ nextGame.date.split(" ")[1] }} {{ nextGame.date.split(" ")[0].split("-")[2] }}-{{ nextGame.date.split(" ")[0].split("-")[1] }}-{{ nextGame.date.split(" ")[0].split("-")[0] }}
+                    </h5>
+                    <h5 class="card-title col-sm-4">
+                        {{ nextGame.roundname }}
+                    </h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

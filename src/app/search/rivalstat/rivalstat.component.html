@@ -1,0 +1,62 @@
+<div class="container">
+    <div class="col-sm-6">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <img class="club-logo" src={{logos[rivalStats.name]}} 
+                    onerror="this.src='./../assets/images/logos/default.png'">
+                    <h5 class="card-title">
+                        {{ rivalStats.rank }}
+                    </h5>
+                    <h5 class="card-title">
+                        {{ rivalStats.name }}
+                    </h5>
+                    <h5 class="card-title">
+                        {{ rivalStats.played }}
+                    </h5>
+                    <h5 class="card-title">
+                        {{ rivalStats.pts }}
+                    </h5>
+                    <h5 class="card-title">
+                        {{ rivalStats.wins }}
+                    </h5>
+                    <h5 class="card-title">
+                        {{ rivalStats.losses }}
+                    </h5>
+                    <h5 class="card-title">
+                        {{ rivalStats.draws }}
+                    </h5>
+                </div>
+                <div class="table-responsive">
+                    <table class="table" id='tab'>
+                        <thead>
+                        <tr>
+                            <th scope="col">ATeam</th>
+                            <th scope="col">HTeam</th>
+                            <th scope="col">AGoals</th>
+                            <th scope="col">HGoals</th>
+                            <th scope="col">Winner</th>
+                            <th scope="col">Venue</th>
+                            <th scope="col">Date</th>                
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr *ngFor="let match of rivalMatches">
+                            <td>{{ match.ateam }}</td>
+                            <td>{{ match.hteam }}</td>
+                            <td>{{ match.agoals }}</td>
+                            <td>{{ match.hgoals }}</td>
+                            <td>{{ match.winner }}</td>
+                            <td>{{ match.venue }}</td>
+                            <td>{{ match.date.split(" ")[0].split("-")[2] }}-
+                                {{ match.date.split(" ")[0].split("-")[1] }}-
+                                {{ match.date.split(" ")[0].split("-")[0] }}
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

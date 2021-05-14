@@ -12,6 +12,10 @@ import { StatisticsComponent } from './search/statistics/statistics.component';
 import { UpcomingComponent } from './search//upcoming/upcoming.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PastmatchesComponent } from './search/pastmatches/pastmatches.component';
+import { VenuesComponent } from './search/venues/venues.component';
+import { RivalstatComponent } from './search/rivalstat/rivalstat.component';
+import { PlayersComponent } from './search/players/players.component';
+import { NextfourComponent } from './search/nextfour/nextfour.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +26,11 @@ import { PastmatchesComponent } from './search/pastmatches/pastmatches.component
     StatisticsComponent,
     LeaderboardComponent,
     UpcomingComponent,
-    PastmatchesComponent
+    PastmatchesComponent,
+    VenuesComponent,
+    RivalstatComponent,
+    PlayersComponent,
+    NextfourComponent
 
   ],
   imports: [

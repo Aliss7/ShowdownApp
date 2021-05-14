@@ -12,9 +12,8 @@ export class StatisticsComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  @Input() teamStats : any;
-  
-  @Input() logos : any;
+  @Input() teamStats: any;
+  @Input() logos: any;
 
   defaultImage : string = "./../assets/images/logos/default.png";
 

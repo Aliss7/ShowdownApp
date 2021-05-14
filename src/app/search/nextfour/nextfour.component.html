@@ -4,20 +4,18 @@
             <table class="table" id='tab'>
                 <thead>
                 <tr>
-                    <th scope="col">Round</th>
                     <th scope="col">Opponent</th>
-                    <th scope="col">H/A</th>
                     <th scope="col">Venue</th>
-                    <th scope="col">Winner</th>               
+                    <th scope="col">Round</th>
+                    <th scope="col">Date</th>                
                 </tr>
                 </thead>
                 <tbody>
-                <tr *ngFor="let match of matches">
-                    <td>{{ match.round }}</td>
+                <tr *ngFor="let match of nextFour">
                     <td>{{ match.query_opponent }}</td>
-                    <td>{{ match.query_ha }}</td>
                     <td>{{ match.venue }}</td>
-                    <td>{{ match.winner }}</td>
+                    <td>{{ match.round }}</td>
+                    <td>{{ match.date.split(" ")[0].split("-")[2] }}-{{ match.date.split(" ")[0].split("-")[1] }}-{{ match.date.split(" ")[0].split("-")[0] }}</td>
                 </tr>
                 </tbody>
             </table>

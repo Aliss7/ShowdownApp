@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="card">
+        <div class="table-responsive">
+            <table class="table" id='tab'>
+                <thead>
+                <tr>
+                    <th scope="col">Player</th>
+                    <th scope="col">PAV</th>
+                    <th scope="col">Games Played</th>
+                    <th scope="col">% of Total</th>
+                    <th scope="col">PAV Rank</th>
+
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let player of players">
+                    <td>{{ player.firstname }} {{ player.surname }}</td>
+                    <td>{{ player.PAV_total }}</td>
+                    <td>{{ player.games }}</td>
+                    <td>{{ player["%_of_team_games"] }}</td>
+                    <td>{{ player.PAV_total_rank }}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

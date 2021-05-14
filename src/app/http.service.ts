@@ -36,6 +36,13 @@ export class HttpService {
     return this.httpClient.post(this.apiUrl, data);
   }
 
+  public fetchPlayers(id: string): Observable<Object> {
+    var data = new FormData();
+    data.append('q', 'pav');
+    data.append('team', id);
+    return this.httpClient.post(this.apiUrl, data);
+  }
+
   public fetchSeasonDetails(): Observable<Object> {
     var data = new FormData();
     data.append('q', 'games');

@@ -11,6 +11,8 @@ export class UpcomingComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  @Input() queryTeamName : any;
+  @Input() nextGame : any;
+  @Input() logos : any;
+  @Input() prediction: any;
 
 }

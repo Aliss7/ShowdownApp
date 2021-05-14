@@ -11,21 +11,6 @@
   </div>
 </section>
 
-<section class="display">
-<div class="container">
-  <ul class="nav justify-content-center sticky-top">
-    <li class="nav-item">
-      <a class="nav-link active" href="#stats">Stats</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#upcoming">Upcoming Matches</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#leaderboard">Leaderboard</a>
-    </li>
-  </ul>
-  </div>
-</section>
 <app-statistics id="stats" [queryTeamName]=teamName></app-statistics>
 <app-leaderboard id="leaderboard" [teamResults]=teamResults></app-leaderboard>
 <app-upcoming id="upcoming" [queryTeamName]=teamName></app-upcoming>

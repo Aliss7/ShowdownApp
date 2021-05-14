@@ -1,0 +1,120 @@
+{
+    "team_list":[
+        "Western Bulldogs",
+        "West Coast Eagles",
+        "Sydney Swans",
+        "St Kilda Saints",
+        "Richmond Tigers",
+        "Port Adelaide Power",
+        "North Melbourne Kangaroos",
+        "Melbourne Demons",
+        "Hawthorn Hawks",
+        "Greater Western Sydney Giants",
+        "Gold Coast Suns",
+        "Geelong Cats",
+        "Fremantle Dockers",
+        "Essendon Bombers",
+        "Collingwood Magpies",
+        "Carlton Blues",
+        "Brisbane Lions",
+        "Adelaide Crows"
+    ],
+    "team_ids" : {
+        "Western Bulldogs" : 18, 
+        "West Coast Eagles": 17,
+        "Sydney Swans": 16,
+        "St Kilda Saints": 15,
+        "Richmond Tigers": 14,
+        "Port Adelaide Power": 13,
+        "North Melbourne Kangaroos": 12,
+        "Melbourne Demons": 11,
+        "Hawthorn Hawks": 10,
+        "Greater Western Sydney Giants": 9,
+        "Gold Coast Suns": 8,
+        "Geelong Cats": 7,
+        "Fremantle Dockers": 6,
+        "Essendon Bombers": 5,
+        "Collingwood Magpies": 4,
+        "Carlton Blues": 3,
+        "Brisbane Lions": 2,
+        "Adelaide Crows" : 1
+      },
+      "rivals":
+      {
+        "Western Bulldogs" : [
+          "Greater Western Sydney"
+        ], 
+        "West Coast":[
+          "Fremantle"
+        ],
+        "Sydney": [
+          "Greater Western Sydney"
+        ],
+        "St Kilda": [
+          "Hawthorn",
+          "Geelong"
+        ],
+        "Richmond": [
+          "Carlton",
+          "Collingwood",
+          "Essendon"
+        ],
+        "Port Adelaide": [
+          "Adelaide"
+        ],
+        "North Melbourne": [
+          "Essendon",
+          "Hawthorn"
+        ],
+        "Melbourne": [
+          "Collinwood",
+          "Essendon"
+        ],
+        "Hawthorn": [
+          "Essendon",
+          "Geelong",
+          "North Melbourne",
+          "St Kilda"
+        ],
+        "Greater Western Sydney": [
+          "Sydney",
+          "Western Bulldogs"
+        ],
+        "Gold Coast": [
+          "Brisbane Lions"
+        ],
+        "Geelong": [
+          "Hawthorn",
+          "St Kilda"
+        ],
+        "Fremantle": [
+          "West Coast"
+        ],
+        "Essendon": [
+          "Carlton",
+          "Collindwood",
+          "Hawthorn",
+          "Richmond",
+          "North Melbourne"
+        ],
+        "Collingwood": [
+          "Carlton",
+          "Essendon",
+          "Melbourne",
+          "Richmond"
+        ],
+        "Carlton": [
+          "Essendon",
+          "Collingwood",
+          "Richmond"
+        ],
+        "Brisbane Lions": [
+          "Gold Coast"
+        ],
+        "Adelaide" : [
+          "Port Adelaide"
+        ]
+      
+      }
+      
+}

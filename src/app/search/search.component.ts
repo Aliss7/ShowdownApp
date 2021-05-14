@@ -2,106 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { Observable, OperatorFunction } from 'rxjs';
 import { debounceTime, distinctUntilChanged, map } from 'rxjs/operators';
 import { HttpService } from '../http.service';
+import  *  as  data  from  '../../afl_config.json';
 
-const teamNames = [ 'Western Bulldogs', 'West Coast', 'Sydney', 'St Kilda', 'Richmond', 'Port Adelaide', 'North Melbourne', 'Melbourne', 'Hawthorn', 'Greater Western Sydney', 'Gold Coast', 'Geelong', 'Fremantle', 'Essendon', 'Collingwood', 'Carlton', 'Brisbane Lions', 'Adelaide' ];
+const teamNames = data.team_list;
 
-const teamIDs : { [key: string]: number }  = {
-  'Western Bulldogs' : 18, 
-  'West Coast': 17,
-  'Sydney': 16,
-  'St Kilda': 15,
-  'Richmond': 14,
-  'Port Adelaide': 13,
-  'North Melbourne': 12,
-  'Melbourne': 11,
-  'Hawthorn': 10,
-  'Greater Western Sydney': 9,
-  'Gold Coast': 8,
-  'Geelong': 7,
-  'Fremantle': 6,
-  'Essendon': 5,
-  'Collingwood': 4,
-  'Carlton': 3,
-  'Brisbane Lions': 2,
-  'Adelaide' : 1
-}
+const teamIDs : { [key: string]: number }  = data.team_ids;
 
-const rivalries: { [key: string] : any } = {
-  'Western Bulldogs' : [
-    'Greater Western Sydney'
-  ], 
-  'West Coast':[
-    'Fremantle'
-  ],
-  'Sydney': [
-    'Greater Western Sydney'
-  ],
-  'St Kilda': [
-    'Hawthorn',
-    'Geelong'
-  ],
-  'Richmond': [
-    'Carlton',
-    'Collingwood',
-    'Essendon'
-  ],
-  'Port Adelaide': [
-    'Adelaide'
-  ],
-  'North Melbourne': [
-    'Essendon',
-    'Hawthorn'
-  ],
-  'Melbourne': [
-    'Collinwood',
-    'Essendon'
-  ],
-  'Hawthorn': [
-    'Essendon',
-    'Geelong',
-    'North Melbourne',
-    'St Kilda'
-  ],
-  'Greater Western Sydney': [
-    'Sydney',
-    'Western Bulldogs'
-  ],
-  'Gold Coast': [
-    'Brisbane Lions'
-  ],
-  'Geelong': [
-    'Hawthorn',
-    'St Kilda'
-  ],
-  'Fremantle': [
-    'West Coast'
-  ],
-  'Essendon': [
-    'Carlton',
-    'Collindwood',
-    'Hawthorn',
-    'Richmond',
-    'North Melbourne'
-  ],
-  'Collingwood': [
-    'Carlton',
-    'Essendon',
-    'Melbourne',
-    'Richmond'
-  ],
-  'Carlton': [
-    'Essendon',
-    'Collingwood',
-    'Richmond'
-  ],
-  'Brisbane Lions': [
-    'Gold Coast'
-  ],
-  'Adelaide' : [
-    'Port Adelaide'
-  ]
-
-}
+const rivalries: { [key: string] : any } = data.rivals;
 
 let teamID : number = 0;
 
@@ -160,6 +67,7 @@ export class SearchComponent implements OnInit {
   getStats() {
     this.http.fetchLeaderboard().subscribe((data: any) => {
       this.teamResults = data["standings"];
+      console.log("team results",this.teamResults);
     });
 
     this.http.fetchSeasonDetails().subscribe((data:any)=> {
@@ -167,24 +75,28 @@ export class SearchComponent implements OnInit {
       teamID = teamIDs[this.teamName];
       this.gamesPlayed = seasonDetails.filter(this.filterGames); 
       this.winingVenues = this.gamesPlayed.filter(this.filterVenues);
+      console.log("games played",this.gamesPlayed);
+      console.log("winning venues",this.winingVenues);
     });
 
     this.http.fetchNextGame().subscribe((data:any)=> {
       var gameDetails = data["games"];
       teamID = teamIDs[this.teamName];
       this.nextGame = gameDetails.filter(this.getNextGame)[0];
+      console.log("next game",this.nextGame);
       this.nextGameID = this.nextGame.id;
 
       var gameID: string = String(this.nextGameID);
       this.http.fetchPrediction(gameID).subscribe((data:any)=> {
         var predictions = data["tips"];
+        console.log("predictions",predictions);
   
       });
 
     this.http.fetchNextFour().subscribe((data:any)=>{
       var nextFour = data["games"];
       this.nextFour = nextFour.filter(this.filterNextFour);
-      console.log(this.nextFour)
+      console.log("next four games",this.nextFour)
 
     })
 

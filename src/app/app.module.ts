@@ -11,6 +11,7 @@ import { LeaderboardComponent } from './search/leaderboard/leaderboard.component
 import { StatisticsComponent } from './search/statistics/statistics.component';
 import { UpcomingComponent } from './search//upcoming/upcoming.component';
 import { HttpClientModule } from '@angular/common/http';
+import { PastmatchesComponent } from './search/pastmatches/pastmatches.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { HttpClientModule } from '@angular/common/http';
     SearchComponent,
     StatisticsComponent,
     LeaderboardComponent,
-    UpcomingComponent
+    UpcomingComponent,
+    PastmatchesComponent
 
   ],
   imports: [

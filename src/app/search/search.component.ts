@@ -10,6 +10,8 @@ const teamIDs : { [key: string]: number }  = data.team_ids;
 
 const rivalries: { [key: string] : any } = data.rivals;
 
+const leaderboardCount : number = data.leaderboard;
+
 let teamID : number = 0;
 
 @Component({
@@ -22,13 +24,32 @@ export class SearchComponent implements OnInit {
   constructor( private http: HttpService ) {
   }
 
-  teamResults: any;
+  topTeamResults: any;
+  leaderboard: any;
   teamPrediction: any;
   gamesPlayed: any;
   nextGameID: any;
   nextGame: any;
   winingVenues: any;
   nextFour: any;
+  teamList: any = teamNames;
+  teamStats : { [key: string]: number|string|null } = {
+    draws:null,
+    goals_for:null,
+    for:null,
+    behinds_against:null,
+    name:null,
+    wins:null,
+    played:null,
+    pts:null,
+    against:null,
+    losses:null,
+    behinds_for:null,
+    percentage: null,
+    goals_against:null,
+    id:null,
+    rank:null
+  };
 
   ngOnInit(): void {
   }
@@ -65,14 +86,24 @@ export class SearchComponent implements OnInit {
   }
 
   getStats() {
+    teamID = teamIDs[this.teamName];
+    console.log(teamID);
+
     this.http.fetchLeaderboard().subscribe((data: any) => {
-      this.teamResults = data["standings"];
-      console.log("team results",this.teamResults);
+      this.leaderboard = data["standings"]
+      this.topTeamResults = this.leaderboard.slice(0,leaderboardCount);
+      for(const team of this.leaderboard){
+        if(team["id"]==teamID){
+          this.teamStats = team;
+        }
+      }
+      console.log("All team results",this.topTeamResults);
+      console.log("Selected Team Results",this.teamStats);
     });
 
     this.http.fetchSeasonDetails().subscribe((data:any)=> {
       var seasonDetails = data["games"];
-      teamID = teamIDs[this.teamName];
+      
       this.gamesPlayed = seasonDetails.filter(this.filterGames); 
       this.winingVenues = this.gamesPlayed.filter(this.filterVenues);
       console.log("games played",this.gamesPlayed);
@@ -103,14 +134,5 @@ export class SearchComponent implements OnInit {
     });
 
   }
-
-  search: OperatorFunction<string, readonly string[]> = (text$: Observable<string>) =>
-    text$.pipe(
-      debounceTime(200),
-      distinctUntilChanged(),
-      map(term => term === '' ? []
-        : teamNames.filter(v => v.toLowerCase().indexOf(term.toLowerCase()) > -1).slice(0, 10))
-    )
-
 
 }

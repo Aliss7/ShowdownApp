@@ -1,17 +1,16 @@
 <section class="search">
   <div class="container">
     <div class="input-group col-xl-8 col-lg-8 col-md-8 col-sm-10 col-xsl-12">
-      <input id="autocomplete" type="text" class="form-control" placeholder="Search Team Name" aria-label="Team Name" 
-        aria-describedby="btn-query" [(ngModel)]="teamName" [ngbTypeahead]="search">
-      <button class="btn" type="button" id="btn-query"
-        (click)="getStats()">
-        <a href="#leaderboard"><i class="bi bi-search"></i></a>
-      </button>
+        <select (change)="getStats()" [(ngModel)]="teamName">
+        <option *ngFor="let team of teamList" value={{team}}>
+          {{team}}
+        </option>
+      </select>
     </div>
   </div>
 </section>
 
-<app-statistics id="stats" [queryTeamName]=teamName></app-statistics>
-<app-leaderboard id="leaderboard" [teamResults]=teamResults></app-leaderboard>
+<app-statistics id="stats" [teamStats]=teamStats></app-statistics>
+<app-leaderboard id="leaderboard" [topTeams]=leaderboard></app-leaderboard>
 <app-upcoming id="upcoming" [queryTeamName]=teamName></app-upcoming>
 

@@ -39,10 +39,3 @@
         margin-top: -70%;
     }
 }
-
-::ng-deep [id^="ngb-typeahead-"] { 
-    width: 100%!important; 
-    white-space: nowrap!important;
-    overflow: hidden!important;
-    text-overflow: ellipsis!important;
-} 

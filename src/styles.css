@@ -46,7 +46,3 @@ body {
     margin: 0;
     padding: 0; 
 }
-
-::ng-deep typeahead-container {
-  width: 100% !important;
-}

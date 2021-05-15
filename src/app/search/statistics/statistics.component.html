@@ -1,29 +1,40 @@
-<div class="container">
-    <div class="col-sm-6">
-        <div class="card">
-            <div class="card-body">
-                <img class="club-logo" src={{logos[teamStats.name]}} 
-                onerror="this.src='./../assets/images/logos/default.png'">
-                <h5 class="card-title">
-                    {{ teamStats.rank }}
+<div class="card component">
+    <div class="card-body">
+        <div class="row mb-5">
+        <div class="col-lg-3 col-sm-4 col-xs-12">
+            <img class="club-logo-lg" src={{logos[teamStats.name]}} 
+            onerror="this.src='./../assets/images/logos/default.png'">
+        </div>
+        <div class="col-lg-4 col-xs-12">
+            <h4 class="card-title logo-sm">
+                {{ teamNames[teamStats.id-1] }}
+            </h4>
+        </div>
+        <div class="col-lg-5 col-xs-12">
+            <h5 class="card-title">
+                Current Rank {{ teamStats.rank }}
+            </h5>
+        </div>
+        </div>
+        <div class="row mb-3 mt-3 ml-3 mr-3">
+            <div class="col-lg-3 col-xs-6">
+                <h5 class="card-text emphasis">
+                    {{ teamStats.played }} Played
                 </h5>
-                <h5 class="card-title">
-                    {{ teamStats.name }}
+            </div>
+            <div class="col-lg-3 col-xs-6">
+                <h5 class="card-text">
+                    {{ teamStats.pts }} Pts
                 </h5>
-                <h5 class="card-title">
-                    {{ teamStats.played }}
+            </div>
+            <div class="col-lg-3 col-xs-6">
+                <h5 class="card-text">
+                    {{ teamStats.wins }} Wins
                 </h5>
-                <h5 class="card-title">
-                    {{ teamStats.pts }}
-                </h5>
-                <h5 class="card-title">
-                    {{ teamStats.wins }}
-                </h5>
-                <h5 class="card-title">
-                    {{ teamStats.losses }}
-                </h5>
-                <h5 class="card-title">
-                    {{ teamStats.draws }}
+            </div>
+            <div class="col-lg-3 col-xs-6">
+                <h5 class="card-text">
+                    {{ teamStats.losses }} Lost
                 </h5>
             </div>
         </div>

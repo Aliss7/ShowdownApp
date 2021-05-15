@@ -1,28 +1,45 @@
-<div class="container">
-    <div class="card">
-        <div class="table-responsive">
+<div class="card component">
+    <div class="card-body">
+        <div class="table-responsive" *ngIf="winningVenues.length>0">
             <table class="table" id='tab'>
                 <thead>
-                <tr>
-                    <th scope="col">Opponent</th>
-                    <th scope="col">Venue</th>
-                    <th scope="col">Round</th>
-                    <th scope="col">Date</th>
-                    <th scope="col">Goals</th>
+                    <tr>
+                        <th scope="col">Opponent</th>
+                        <th scope="col">Venue</th>
+                        <th scope="col">Round</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Goals</th>
 
-                </tr>
+                    </tr>
                 </thead>
                 <tbody>
-                <tr *ngFor="let match of winningVenues">
-                    <td>{{ match.query_opponent }}</td>
-                    <td>{{ match.venue }}</td>
-                    <td>{{ match.round }}</td>
-                    <td>{{ match.date.split(" ")[0].split("-")[2] }}-{{ match.date.split(" ")[0].split("-")[1] }}-{{ match.date.split(" ")[0].split("-")[0] }}</td>
-                    <td>{{ match.query_goals }} - {{match.query_opponent_goals}}</td>
-                </tr>
+                    <tr *ngFor="let match of winningVenues">
+                        <td>{{ match.query_opponent }}</td>
+                        <td>{{ match.venue }}</td>
+                        <td>{{ match.round }}</td>
+                        <td>{{ match.date.split(" ")[0].split("-")[2] }}-{{ match.date.split(" ")[0].split("-")[1] }}-{{
+                            match.date.split(" ")[0].split("-")[0] }}</td>
+                        <td>{{ match.query_goals }} - {{match.query_opponent_goals}}</td>
+                    </tr>
                 </tbody>
+            </table>
+        </div>
+        <div class="table-responsive" *ngIf="winningVenues.length==0">
+            <table class="table" id='tab'>
+                <thead>
+                    <tr>
+                        <th scope="col">Opponent</th>
+                        <th scope="col">Venue</th>
+                        <th scope="col">Round</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Goals</th>
+
+                    </tr>
+                </thead>
+                <div class="card-body">
+                    <h5 class="card-text">The Team has not won anywhere</h5>
+                </div>
             </table>
         </div>
     </div>
 </div>
-

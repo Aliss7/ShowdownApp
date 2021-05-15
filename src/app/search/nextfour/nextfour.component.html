@@ -1,22 +1,23 @@
-<div class="container">
-    <div class="card">
+<div class="card component">
+    <div class="card-body">
         <div class="table-responsive">
             <table class="table" id='tab'>
                 <thead>
-                <tr>
-                    <th scope="col">Opponent</th>
-                    <th scope="col">Venue</th>
-                    <th scope="col">Round</th>
-                    <th scope="col">Date</th>                
-                </tr>
+                    <tr>
+                        <th scope="col">Opponent</th>
+                        <th scope="col">Venue</th>
+                        <th scope="col">Round</th>
+                        <th scope="col">Date</th>
+                    </tr>
                 </thead>
                 <tbody>
-                <tr *ngFor="let match of nextFour">
-                    <td>{{ match.query_opponent }}</td>
-                    <td>{{ match.venue }}</td>
-                    <td>{{ match.round }}</td>
-                    <td>{{ match.date.split(" ")[0].split("-")[2] }}-{{ match.date.split(" ")[0].split("-")[1] }}-{{ match.date.split(" ")[0].split("-")[0] }}</td>
-                </tr>
+                    <tr *ngFor="let match of nextFour">
+                        <td>{{ match.query_opponent }}</td>
+                        <td>{{ match.venue }}</td>
+                        <td>{{ match.round }}</td>
+                        <td>{{ match.date.split(" ")[0].split("-")[2] }}-{{ match.date.split(" ")[0].split("-")[1] }}-{{
+                            match.date.split(" ")[0].split("-")[0] }}</td>
+                    </tr>
                 </tbody>
             </table>
         </div>

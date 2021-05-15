@@ -14,7 +14,6 @@ export class StatisticsComponent implements OnInit {
 
   @Input() teamStats: any;
   @Input() logos: any;
-
-  defaultImage : string = "./../assets/images/logos/default.png";
+  @Input() teamNames: any;
 
 }

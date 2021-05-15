@@ -64,7 +64,7 @@ export class SearchComponent implements OnInit {
     winnerteamid: 0,
     year: 0
   };
-  winningVenues: any;
+  winningVenues: Array<object> = [];
   nextFour: any;
   teamList: any = teamNames;
   teamStats: { [key: string]: number|string } = {
@@ -101,7 +101,7 @@ export class SearchComponent implements OnInit {
     id:"",
     rank:""
   };
-  rivalMatches: any;
+  rivalMatches: Array<object> = [];
   teamids: any = teamIDs;
   logos: any = teamLogos;
   tid: any;

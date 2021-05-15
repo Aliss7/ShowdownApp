@@ -2,53 +2,144 @@
 
 @import '~bootstrap/dist/css/bootstrap.min.css';
 @import "~bootstrap-icons/font/bootstrap-icons.css";
-
-@font-face {
-  font-family: 'GilroyBold';
-  src: url(src\assets\fonts\Gilroy\ExtraBold.otf);
-}
-
-@font-face {
-  font-family: 'GilroyLight';
-  src: url(src\assets\fonts\Gilroy\Light.otf);
-}
-
-@font-face {
-  font-family: 'GilroyBold';
-  src: url(src\assets\fonts\Gilroy\ExtraBold.otf);
-}
-
-:root {
-
-    --primary-colour : var(rgba(255, 255, 255, 1));
-    --secondary-colour : var(rgba(33, 33, 33, 1));
-    --accent-colour : var(rgb(3, 16, 87));
-    --body-font : var(GilroyBold);
-    --heading-font : var(GilroyLight);
-    --title-font : var(GilroyBold);
-    --body-weight : var(400);
-    --heading-weight : var(400);
-    --body-size : var(16px);
-    --heading-size : var()
-
-
-}
-
-html,
-body {
-  width: 100%;
-  height: 100%;
-}
-
-* {
-    font-family: var(--body-font);
-    font-size: var(--body-size);
-    margin: 0;
-    padding: 0; 
-}
+@import url('https://fonts.googleapis.com/css2?family=Exo:ital,wght@1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&&display=swap');
 
 .club-logo {
-  height: 10vh;
-  width: 10vh;
+  height: 7.5vh;
+  width: 7.5vh;
 }
 
+.club-logo-md {
+  height: 11.5vh;
+  width: 11.5vh;
+}
+
+.club-logo-lg {
+  height: 20vh;
+  width: 20vh;
+}
+
+.logo {
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 40px;
+  font-family: 'Exo', sans-serif;
+  margin:0;
+}
+
+.logo-sm {
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 25px;
+  font-family: 'Exo', sans-serif;
+  margin:0;
+}
+
+.logo-xs {
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 20px;
+  font-family: 'Exo', sans-serif;
+  margin:0;
+}
+
+.navbar{
+  color: rgb(0, 123, 255);
+  background-color: rgb(14, 13, 13);
+  height: 15vh;
+  
+}
+
+select {
+  font-weight: 700;
+  text-transform: capitalize;
+  font-size: 14px;
+  font-family: 'Lato', sans-serif;
+  margin:0;
+  height: 5vh;
+  width: 70vh;
+  border-radius: 8px;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.144);
+}
+
+
+.grid-container {
+  font-size: 15px;
+  margin-top: 20vh;
+  margin-bottom: 20vh;
+  margin-left: 5vh;
+  margin-right: 5vh;
+  display: grid;
+  grid-template-columns: 0.75fr 0.75fr 0.75fr 0.75fr;
+  grid-template-rows: 1fr 0.75fr 0.75fr 0.75fr 0.75fr 0.75fr 0.75fr;
+  gap:10px 10px;
+  grid-template-areas:
+    "statistics statistics leaderboard leaderboard"
+    "upcoming upcoming leaderboard leaderboard"
+    "matches matches leaderboard leaderboard"
+    "matches matches nextfour nextfour"
+    "matches matches venues venues"
+    "players players rivals rivals"
+    "players players rivals rivals";
+}
+
+/* On screens that are 992px wide or less, go from four columns to two columns */
+@media screen and (max-width: 992px) {
+  .grid-container {
+    display: grid;
+    grid-template-columns: 0.75fr 0.75fr;
+    grid-template-rows: 0.75fr 0.75fr 0.75fr 0.75fr 0.75fr 0.75fr fr 2fr 2fr 2.5fr 2.5fr;
+    gap: 10px 10px;
+    grid-template-areas:
+      "statistics statistics"
+      "upcoming upcoming"
+      "leaderboard leaderboard"
+      "leaderboard leaderboard"
+      "leaderboard leaderboard"
+      "leaderboard leaderboard"
+      "matches matches"
+      "nextfour nextfour"
+      "rivals rivals"
+      "venues venues"
+      "players players";
+  }
+
+  select {
+    font-weight: 700;
+    text-transform: capitalize;
+    font-size: 14px;
+    font-family: 'Lato', sans-serif;
+    margin:0;
+    height: 5vh;
+    width: 30vh;
+    border-radius: 5px;
+  }
+
+  .logo {
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-family: 'Exo', sans-serif;
+    margin:0;
+  }
+}
+
+.statistics { grid-area: statistics; }
+
+.upcoming { grid-area: upcoming; }
+
+.leaderboard { grid-area: leaderboard; }
+
+.matches { grid-area: matches; }
+
+.nextfour { grid-area: nextfour; }
+
+.rivals { grid-area: rivals; }
+
+.venues { grid-area: venues; }
+
+.players { grid-area: players; }

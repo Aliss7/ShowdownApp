@@ -1,33 +1,33 @@
-<div class="container">
-    <div class="card">
+<div class="card component">
+    <div class="card-body">
         <div class="table-responsive">
             <table class="table" id='tab'>
                 <thead>
-                <tr>
-                    <th scope="col">Rank</th>
-                    <th scope="col">Club</th>
-                    <th scope="col">Played</th>
-                    <th scope="col">Points</th>
-                    <th scope="col">Won</th>
-                    <th scope="col">Losses</th>
-                    <th scope="col">Draws</th>                
-                </tr>
+                    <tr>
+                        <th scope="col">Rank</th>
+                        <th scope="col">Club</th>
+                        <th scope="col">Played</th>
+                        <th scope="col">Points</th>
+                        <th scope="col">Won</th>
+                        <th scope="col">Losses</th>
+                        <th scope="col">Draws</th>
+                    </tr>
                 </thead>
                 <tbody>
-                <tr *ngFor="let team of topTeams">
-                    <td>{{ team.rank }}</td>
-                    <td>
-                        <div class="club-name row">
-                        <img class="club-logo"src={{logos[team.name]}}>
-                        <p class="club-name-sm">{{ team.name }}</p>
-                        </div>
-                    </td>
-                    <td>{{ team.played }}</td>
-                    <td>{{ team.pts }}</td>
-                    <td>{{ team.wins }}</td>
-                    <td>{{ team.losses }}</td>
-                    <td>{{ team.draws }}</td>
-                </tr>
+                    <tr *ngFor="let team of topTeams">
+                        <td>{{ team.rank }}</td>
+                        <td>
+                            <div class="club-name row">
+                                <img class="club-logo" src={{logos[team.name]}}>
+                                <p class="club-name-sm">{{ team.name }}</p>
+                            </div>
+                        </td>
+                        <td>{{ team.played }}</td>
+                        <td>{{ team.pts }}</td>
+                        <td>{{ team.wins }}</td>
+                        <td>{{ team.losses }}</td>
+                        <td>{{ team.draws }}</td>
+                    </tr>
                 </tbody>
             </table>
         </div>

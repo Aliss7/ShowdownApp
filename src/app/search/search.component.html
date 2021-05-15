@@ -1,27 +1,60 @@
-<section class="search">
-  <div class="container">
-    <div class="input-group col-xl-8 col-lg-8 col-md-8 col-sm-10 col-xsl-12">
-        <select (change)="getStats(0)" [(ngModel)]="tid">
-          <option [ngValue]="undefined" hidden>Adelaide Crows</option>
-          <option value="0" disabled>Select your Club</option>
-          <option *ngFor="let team of teamList" value={{teamids[team]}}>
-          {{team}}
-        </option>
-      </select>
-    </div>
+<nav class="navbar fixed-top">
+  <p class="navbar-brand logo">Showdown</p>
+  <div class="form-inline">
+    <select class="form-select form-select-lg" (change)="getStats(0)" [(ngModel)]="tid">
+      <option [ngValue]="undefined" hidden>Adelaide Crows</option>
+      <option value="0" disabled>Select your Club</option>
+      <option *ngFor="let team of teamList" value={{teamids[team]}}>
+      {{team}}
+    </option>
+  </select>
+</div>
+</nav>
+
+<!--
+<div class="container">
+  <app-statistics class="statistics" id="stats" [teamStats]=teamStats [logos]=logos></app-statistics>
+  <app-upcoming class="upcoming" id="upcoming" [nextGame]=nextGame [logos]=logos [prediction]=teamPrediction></app-upcoming>
+  <app-leaderboard class="leaderboard" id="leaderboard" [topTeams]=topTeamResults [logos]=logos></app-leaderboard>
+  <app-pastmatches class="matches" id="pastmatches" [matches]=gamesPlayed></app-pastmatches>
+  <app-players class="players" id="players" [players]=players></app-players>
+  <app-nextfour class="nextfour" id="nextfour" [nextFour]=nextFour></app-nextfour>
+  <app-venues class="venues" id="venues" [winningVenues]=winningVenues></app-venues>
+  <app-rivalstat class="rivals" id="rivalstat" [rivalStats]=rivalStats [rivalMatches]=rivalMatches [logos]=logos></app-rivalstat>
+</div>
+-->
+
+<div class="grid-container">
+  <div class="statistics">
+    <label class="label">Statistics</label>
+    <app-statistics id="stats" [teamStats]=teamStats [teamNames]=teamList [logos]=logos></app-statistics>
   </div>
-</section>
-
-<app-statistics id="stats" [teamStats]=teamStats [logos]=logos></app-statistics>
-<app-leaderboard id="leaderboard" [topTeams]=topTeamResults [logos]=logos></app-leaderboard>
-<app-upcoming id="upcoming" [nextGame]=nextGame [logos]=logos [prediction]=teamPrediction></app-upcoming>
-<app-pastmatches id="pastmatches" [matches]=gamesPlayed></app-pastmatches>
-<app-nextfour id="nextfour" [nextFour]=nextFour></app-nextfour>
-<app-venues id="venues" [winningVenues]=winningVenues></app-venues>
-<app-rivalstat id="rivalstat" [rivalStats]=rivalStats [rivalMatches]=rivalMatches [logos]=logos></app-rivalstat>
-<app-players id="players" [players]=players></app-players>
-
-
-
-
-
+  <div class="leaderboard">
+    <label class="label">Leaderboard</label>
+    <app-leaderboard id="leaderboard" [topTeams]=topTeamResults [logos]=logos></app-leaderboard>
+  </div>
+  <div class="upcoming">
+    <label class="label">Upcoming Match</label>
+    <app-upcoming  id="upcoming" [nextGame]=nextGame [logos]=logos [prediction]=teamPrediction></app-upcoming>
+  </div>
+  <div class="matches">
+    <label class="label">Season Performance</label>
+    <app-pastmatches id="pastmatches" [matches]=gamesPlayed></app-pastmatches>
+  </div>
+  <div class="nextfour">
+    <label class="label">Next 4 Matches</label>
+    <app-nextfour id="nextfour" [nextFour]=nextFour></app-nextfour>
+  </div>
+  <div class="venues">
+    <label class="label">Winning Venues</label>
+    <app-venues id="venues" [winningVenues]=winningVenues></app-venues>
+  </div>
+  <div class="players">
+    <label class="label">Key Players</label>
+    <app-players id="players" [players]=players></app-players>
+  </div>
+  <div class="rivals">
+    <label class="label">Rival Performance</label>
+    <app-rivalstat id="rivalstat" [rivalStats]=rivalStats [rivalMatches]=rivalMatches [logos]=logos></app-rivalstat>
+  </div>
+</div>

@@ -1,4 +1,4 @@
-<div class="card component">
+<div class="card component card-height-150">
     <div class="card-body">
         <div class="table-responsive">
             <table class="table" id='tab'>
@@ -14,10 +14,10 @@
                 <tbody>
                     <tr *ngFor="let match of matches">
                         <td>{{ match.round }}</td>
-                        <td>{{ match.query_opponent }}</td>
-                        <td>{{ match.query_ha }}</td>
+                        <td class="logo-xsm">{{ match.query_opponent }}</td>
+                        <td><p class="table-emphasis-blue">{{ match.query_ha }}</p></td>
                         <td>{{ match.venue }}</td>
-                        <td>{{ match.winner }}</td>
+                        <td class="logo-xsm-blue">{{ match.winner }}</td>
                     </tr>
                 </tbody>
             </table>

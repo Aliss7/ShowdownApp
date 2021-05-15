@@ -1,4 +1,4 @@
-<div class="card component">
+<div class="card component card-height-100">
     <div class="card-body">
         <div class="table-responsive">
             <table class="table" id='tab'>
@@ -14,11 +14,11 @@
                 </thead>
                 <tbody>
                     <tr *ngFor="let player of players">
-                        <td>{{ player.firstname }} {{ player.surname }}</td>
-                        <td>{{ player.PAV_total }}</td>
+                        <td class="logo-xsm">{{ player.firstname }} {{ player.surname }}</td>
+                        <td><p class="table-emphasis-blue ml-2">{{ player.PAV_total }}</p></td>
                         <td>{{ player.games }}</td>
                         <td>{{ player["%_of_team_games"] }}</td>
-                        <td>{{ player.PAV_total_rank }}</td>
+                        <td><p class="table-emphasis ml-2">{{ player.PAV_total_rank }}</p></td>
                     </tr>
                 </tbody>
             </table>

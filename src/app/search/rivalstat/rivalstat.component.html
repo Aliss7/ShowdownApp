@@ -1,29 +1,42 @@
-<div class="card component">
+<div class="card component card-height-80">
     <div class="card-body">
-        <div class="row">
-            <img class="club-logo" src={{logos[rivalStats.name]}}
-                onerror="this.src='./../assets/images/logos/default.png'">
-            <h5 class="card-title">
-                {{ rivalStats.rank }}
-            </h5>
-            <h5 class="card-title">
+        <div class="row mb-5">
+        <div class="col-lg-3 col-sm-4 col-xs-12">
+            <img class="club-logo-lg" src={{logos[rivalStats.name]}} 
+            onerror="this.src='./../assets/images/logos/default.png'">
+        </div>
+        <div class="col-lg-4 col-xs-12">
+            <h4 class="card-title logo-sm">
                 {{ rivalStats.name }}
+            </h4>
+        </div>
+        <div class="col-lg-5 col-xs-12">
+            <h5 class="card-title ">
+                Current Rank {{ rivalStats.rank }}
             </h5>
-            <h5 class="card-title">
-                {{ rivalStats.played }}
-            </h5>
-            <h5 class="card-title">
-                {{ rivalStats.pts }}
-            </h5>
-            <h5 class="card-title">
-                {{ rivalStats.wins }}
-            </h5>
-            <h5 class="card-title">
-                {{ rivalStats.losses }}
-            </h5>
-            <h5 class="card-title">
-                {{ rivalStats.draws }}
-            </h5>
+        </div>
+        </div>
+        <div class="row mb-3 mt-3 ml-3 mr-3">
+            <div class="col-lg-3 col-xs-6">
+                <h5 class="card-text emphasis">
+                    {{ rivalStats.played }} Played
+                </h5>
+            </div>
+            <div class="col-lg-3 col-xs-6">
+                <h5 class="card-text">
+                    {{ rivalStats.pts }} Pts
+                </h5>
+            </div>
+            <div class="col-lg-3 col-xs-6">
+                <h5 class="card-text">
+                    {{ rivalStats.wins }} Wins
+                </h5>
+            </div>
+            <div class="col-lg-3 col-xs-6">
+                <h5 class="card-text">
+                    {{ rivalStats.losses }} Lost
+                </h5>
+            </div>
         </div>
         <div class="table-responsive" *ngIf="rivalMatches.length>0">
             <div class="table-responsive">
@@ -36,7 +49,6 @@
                             <th scope="col">HGoals</th>
                             <th scope="col">Winner</th>
                             <th scope="col">Venue</th>
-                            <th scope="col">Date</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -45,12 +57,8 @@
                             <td>{{ match.hteam }}</td>
                             <td>{{ match.agoals }}</td>
                             <td>{{ match.hgoals }}</td>
-                            <td>{{ match.winner }}</td>
+                            <td><p class="table-emphasis-wide ml-1">{{ match.winner }}</p></td>
                             <td>{{ match.venue }}</td>
-                            <td>{{ match.date.split(" ")[0].split("-")[2] }}-
-                                {{ match.date.split(" ")[0].split("-")[1] }}-
-                                {{ match.date.split(" ")[0].split("-")[0] }}
-                            </td>
                         </tr>
                     </tbody>
                 </table>

@@ -1,4 +1,4 @@
-<div class="card component">
+<div class="card component card-height-150">
     <div class="card-body">
         <div class="table-responsive">
             <table class="table" id='tab'>
@@ -18,13 +18,12 @@
                         <td>{{ team.rank }}</td>
                         <td>
                             <div class="club-name row">
-                                <img class="club-logo" src={{logos[team.name]}}>
-                                <p class="club-name-sm">{{ team.name }}</p>
+                                <img class="club-logo-md" src={{logos[team.name]}}>
                             </div>
                         </td>
                         <td>{{ team.played }}</td>
                         <td>{{ team.pts }}</td>
-                        <td>{{ team.wins }}</td>
+                        <td><p class="table-emphasis">{{ team.wins }}</p></td>
                         <td>{{ team.losses }}</td>
                         <td>{{ team.draws }}</td>
                     </tr>
